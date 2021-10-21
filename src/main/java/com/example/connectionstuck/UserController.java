@@ -7,16 +7,16 @@ import reactor.core.publisher.Flux;
 
 @RestController
 @RequestMapping(value = "/v1/sample")
-public class SampleController {
+public class UserController {
 
-  private final SampleRepository repository;
+  private final UserRepository repository;
 
-  public SampleController(SampleRepository repository) {
+  public UserController(UserRepository repository) {
     this.repository = repository;
   }
 
   @GetMapping
-  public Flux<Lala> sample() {
-    return repository.sampleSelect();
+  public Flux<User> sample() {
+    return repository.findAllCustom();
   }
 }
