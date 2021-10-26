@@ -13,9 +13,9 @@ public class PostgresR2dbcConnectionPoolFactory {
 
   public ConnectionFactory create() {
     final String username = "postgres";
-    final String password = "ilegra";
+    final String password = "admin";
     final String host = "localhost";
-    final String port = "5435";
+    final String port = "5432";
     final String database = "postgres";
     final String connectionTimeout = "15000";
     final String applicationName = "sample";

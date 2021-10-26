@@ -11,24 +11,22 @@ insert into users values(1, 'Test 1');
 insert into users values(2, 'Test 2');  
   
 ```
-- start Application with breakpoint in `DefaultFetchSpec` line `49`
-```java
-return ((Flux)this.resultFunction.apply(connection)).flatMap((result) -> {
+- build and run application 
 ```
-- in some cases it is necessary to put the break point on line `48`
+./mvnw clean package
 
-- call endpoint
+java -jar target/connection-stuck-0.0.1-SNAPSHOT.jar
 ```
-curl --location --request GET 'http://localhost:8080/v1/sample'
+- open a new terminal and run cancel.sh
 ```
-- wait for execution to stop at break point and cancel request
-- release application
-- check that the connection will be locked
+sh cancel.sh
+```
+- check connections in database
 ```sql
 select pid, datname, usename, application_name, backend_start, query_start, query
 from pg_stat_activity
 where usename = 'postgres' 
 order by query_start
 ```
-- field `query` with value `SELECT 1`
-- repeat the endpoint call following the steps until all connections are locked
+- normally in less 2 minutes all connections are stuck with field `query` with value `SELECT 1`
+
