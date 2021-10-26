@@ -44,11 +44,11 @@ order by query_start
 2021-10-26 13:26:10.979  INFO 2273659 --- [or-http-epoll-1] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
 2021-10-26 13:26:10.981  INFO 2273659 --- [or-http-epoll-2] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
 2021-10-26 13:26:10.981 DEBUG 2273659 --- [or-http-epoll-2] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the driver
-2021-10-26 13:27:44.048  INFO 2273659 --- [or-http-epoll-2] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
 ```
 
-- in general we dont see this after cancel
+- in general we dont see `i.r.postgresql.util.FluxDiscardOnCancel  : received cancel signal` after CANCEL
 ```
+2021-10-26 13:26:10.551  INFO 2273659 --- [or-http-epoll-7] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
 2021-10-26 13:26:10.551 DEBUG 2273659 --- [or-http-epoll-7] i.r.postgresql.util.FluxDiscardOnCancel  : received cancel signal
 2021-10-26 13:26:10.551 DEBUG 2273659 --- [or-http-epoll-7] io.r2dbc.pool.PooledConnection           : Releasing connection
 ```
