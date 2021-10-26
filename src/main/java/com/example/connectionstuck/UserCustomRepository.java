@@ -9,6 +9,5 @@ import java.util.List;
 public interface UserCustomRepository {
 
   Flux<User> findAllCustom(List<BigInteger> ids);
-  Mono<Long> findCount(List<BigInteger> ids);
 
 }

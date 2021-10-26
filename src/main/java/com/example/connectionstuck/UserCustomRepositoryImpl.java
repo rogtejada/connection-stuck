@@ -33,15 +33,4 @@ public class UserCustomRepositoryImpl implements UserCustomRepository {
         .doOnCancel(() -> LOGGER.info("CANCEL findAllCustom"));
   }
 
-  @Override
-  public Mono<Long> findCount(List<BigInteger> ids) {
-
-    return this.entityTemplate.getDatabaseClient()
-            .sql("select count(*), pg_sleep(0.1) from users u where id in (:ids)")
-            .bind("ids", ids)
-            .map(row -> row.get(0, Long.class))
-            .one()
-            .doOnCancel(() -> LOGGER.info("CANCEL findCount"));
-  }
-
 }

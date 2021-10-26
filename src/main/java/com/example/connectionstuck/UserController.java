@@ -26,19 +26,17 @@ public class UserController {
   }
 
   @GetMapping
-  public Mono<List<User>> sample(@RequestParam("ids") List<BigInteger> ids,
+  public Flux<User> sample(@RequestParam("ids") List<BigInteger> ids,
                                  ServerWebExchange exchange) {
 
     return repository
             .findAllCustom(ids)
-            .collectList()
-            .zipWith(repository.findCount(ids))
-            .map(tuple -> tuple.getT1())
             .doOnSubscribe(s -> LOGGER.info("Entering: [{}] {}",
-                                            exchange.getRequest().getMethod(),
-                                            exchange.getRequest().getURI()))
+                    exchange.getRequest().getMethod(),
+                    exchange.getRequest().getURI()))
             .doOnTerminate(() -> LOGGER.info("Exit: [{}] {}",
-                                            exchange.getRequest().getMethod(),
-                                            exchange.getRequest().getURI()));
+                    exchange.getRequest().getMethod(),
+                    exchange.getRequest().getURI()));
+
   }
 }
