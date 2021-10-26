@@ -14,7 +14,7 @@ sh cancel.sh
 ```sql
 select pid, datname, usename, application_name, backend_start, query_start, query
 from pg_stat_activity
-where usename = 'postgres' 
+where application_name = 'sample' 
 order by query_start
 ```
 - normally in less 2 minutes all connections are stuck with field `query` with value `SELECT 1`
