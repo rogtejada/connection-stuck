@@ -1,0 +1,1038 @@
+|pid|datname|usename|application_name|backend_start|query_start|query|
+|---|-------|-------|----------------|-------------|-----------|-----|
+|7463|postgres|postgres|sample|2021-10-27 11:51:31.626|2021-10-27 11:51:34.253|SELECT 1|
+|7464|postgres|postgres|sample|2021-10-27 11:51:31.626|2021-10-27 11:51:34.490|SELECT 1|
+|7465|postgres|postgres|sample|2021-10-27 11:51:34.505|2021-10-27 11:51:37.468|SELECT 1|
+
+
+
+
+2021-10-27 11:51:02.356  INFO 2900079 --- [  restartedMain] c.e.c.ConnectionStuckApplication         : Starting ConnectionStuckApplication using Java 11.0.10 on dev-jfr with PID 2900079 (/home/jfr/work/java/r2dbc/connection-stuck/target/classes started by jfr in /home/jfr/work/java/r2dbc/connection-stuck)
+2021-10-27 11:51:02.360  INFO 2900079 --- [  restartedMain] c.e.c.ConnectionStuckApplication         : No active profile set, falling back to default profiles: default
+2021-10-27 11:51:02.492  INFO 2900079 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-10-27 11:51:02.492  INFO 2900079 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-10-27 11:51:03.102  INFO 2900079 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-27 11:51:03.114  INFO 2900079 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 R2DBC repository interfaces.
+2021-10-27 11:51:03.280  INFO 2900079 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data R2DBC repositories in DEFAULT mode.
+2021-10-27 11:51:03.282  INFO 2900079 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 R2DBC repository interfaces.
+2021-10-27 11:51:04.027 DEBUG 2900079 --- [  restartedMain] io.r2dbc.postgresql.Extensions           : Discovering Extensions using ServiceLoader
+2021-10-27 11:51:04.031 DEBUG 2900079 --- [  restartedMain] io.r2dbc.postgresql.Extensions           : Registering extension io.r2dbc.postgresql.codec.BuiltinDynamicCodecs
+2021-10-27 11:51:04.801  INFO 2900079 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2021-10-27 11:51:04.970  INFO 2900079 --- [  restartedMain] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+2021-10-27 11:51:04.991  INFO 2900079 --- [  restartedMain] c.e.c.ConnectionStuckApplication         : Started ConnectionStuckApplication in 3.375 seconds (JVM running for 4.213)
+2021-10-27 11:51:04.993  INFO 2900079 --- [  restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
+2021-10-27 11:51:04.997  INFO 2900079 --- [  restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-10-27 11:51:31.563  INFO 2900079 --- [or-http-epoll-3] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:31.563  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:31.569 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:31.569 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:31.574  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:31.574 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:31.672 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Request:  StartupMessage{applicationName='sample', database='postgres', username='postgres', options='{lock_timeout=10s, search_path=public}'}
+2021-10-27 11:51:31.672 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Request:  StartupMessage{applicationName='sample', database='postgres', username='postgres', options='{lock_timeout=10s, search_path=public}'}
+2021-10-27 11:51:31.690 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: AuthenticationMD5Password{salt=java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]}
+2021-10-27 11:51:31.690 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: AuthenticationMD5Password{salt=java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]}
+2021-10-27 11:51:31.695 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Request:  PasswordMessage{password='...'}
+2021-10-27 11:51:31.695 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Request:  PasswordMessage{password='...'}
+2021-10-27 11:51:31.697 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: AuthenticationOk{}
+2021-10-27 11:51:31.698 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: AuthenticationOk{}
+2021-10-27 11:51:31.699 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='application_name', value='sample'}
+2021-10-27 11:51:31.699 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='application_name', value='sample'}
+2021-10-27 11:51:31.699 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='client_encoding', value='UTF8'}
+2021-10-27 11:51:31.699 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='DateStyle', value='ISO, MDY'}
+2021-10-27 11:51:31.699 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='client_encoding', value='UTF8'}
+2021-10-27 11:51:31.699 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='integer_datetimes', value='on'}
+2021-10-27 11:51:31.700 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='IntervalStyle', value='postgres'}
+2021-10-27 11:51:31.700 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='DateStyle', value='ISO, MDY'}
+2021-10-27 11:51:31.700 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='is_superuser', value='on'}
+2021-10-27 11:51:31.700 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='server_encoding', value='UTF8'}
+2021-10-27 11:51:31.700 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='integer_datetimes', value='on'}
+2021-10-27 11:51:31.700 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='server_version', value='13.2 (Debian 13.2-1.pgdg100+1)'}
+2021-10-27 11:51:31.701 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='IntervalStyle', value='postgres'}
+2021-10-27 11:51:31.701 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='session_authorization', value='postgres'}
+2021-10-27 11:51:31.701 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='standard_conforming_strings', value='on'}
+2021-10-27 11:51:31.701 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='is_superuser', value='on'}
+2021-10-27 11:51:31.701 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: ParameterStatus{name='TimeZone', value='America/Sao_Paulo'}
+2021-10-27 11:51:31.702 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2] Response: BackendKeyData{processId=7463, secretKey=-1016605542}
+2021-10-27 11:51:31.702 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='server_encoding', value='UTF8'}
+2021-10-27 11:51:31.702 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:31.702 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='server_version', value='13.2 (Debian 13.2-1.pgdg100+1)'}
+2021-10-27 11:51:31.703 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='session_authorization', value='postgres'}
+2021-10-27 11:51:31.704 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='standard_conforming_strings', value='on'}
+2021-10-27 11:51:31.704 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: ParameterStatus{name='TimeZone', value='America/Sao_Paulo'}
+2021-10-27 11:51:31.704 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1] Response: BackendKeyData{processId=7464, secretKey=-1444869957}
+2021-10-27 11:51:31.705 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:31.743 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SHOW TRANSACTION ISOLATION LEVEL
+2021-10-27 11:51:31.743 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SHOW TRANSACTION ISOLATION LEVEL
+2021-10-27 11:51:31.744 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Query{query='SHOW TRANSACTION ISOLATION LEVEL'}
+2021-10-27 11:51:31.744 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Query{query='SHOW TRANSACTION ISOLATION LEVEL'}
+2021-10-27 11:51:31.747 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='transaction_isolation', table=0}]}
+2021-10-27 11:51:31.747 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='transaction_isolation', table=0}]}
+2021-10-27 11:51:31.752 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 14, cap: 14/14, unwrapped: PooledUnsafeDirectByteBuf(ridx: 72, widx: 88, cap: 1024))]}
+2021-10-27 11:51:31.752 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 14, cap: 14/14, unwrapped: PooledUnsafeDirectByteBuf(ridx: 72, widx: 88, cap: 1024))]}
+2021-10-27 11:51:31.754 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SHOW, rowId=null, rows=null}
+2021-10-27 11:51:31.754 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SHOW, rowId=null, rows=null}
+2021-10-27 11:51:31.755 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:31.755 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:31.779 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT oid, typname FROM pg_catalog.pg_type WHERE typname IN ('hstore')
+2021-10-27 11:51:31.779 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT oid, typname FROM pg_catalog.pg_type WHERE typname IN ('hstore')
+2021-10-27 11:51:31.780 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Parse{name='S_0', parameters=[], query='SELECT oid, typname FROM pg_catalog.pg_type WHERE typname IN ('hstore')'}, Bind{name='B_1', parameterFormats=[], parameters=[], resultFormats=[], source='S_0'}, Describe{name='B_1', type=PORTAL}, Execute{name='B_1', rows=1000}, Flush{}]
+2021-10-27 11:51:31.780 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Parse{name='S_0', parameters=[], query='SELECT oid, typname FROM pg_catalog.pg_type WHERE typname IN ('hstore')'}, Bind{name='B_0', parameterFormats=[], parameters=[], resultFormats=[], source='S_0'}, Describe{name='B_0', type=PORTAL}, Execute{name='B_0', rows=1000}, Flush{}]
+2021-10-27 11:51:31.784 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ParseComplete{}
+2021-10-27 11:51:31.784 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ParseComplete{}
+2021-10-27 11:51:31.785 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:31.785 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:31.786 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=1, dataType=26, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='oid', table=1247}, Field{column=2, dataType=19, dataTypeModifier=-1, dataTypeSize=64, format=FORMAT_TEXT, name='typname', table=1247}]}
+2021-10-27 11:51:31.786 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=1, dataType=26, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='oid', table=1247}, Field{column=2, dataType=19, dataTypeModifier=-1, dataTypeSize=64, format=FORMAT_TEXT, name='typname', table=1247}]}
+2021-10-27 11:51:31.786 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=0}
+2021-10-27 11:51:31.786 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=0}
+2021-10-27 11:51:31.787 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_1', type=PORTAL}
+2021-10-27 11:51:31.787 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_0', type=PORTAL}
+2021-10-27 11:51:31.790 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:31.790 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:31.793 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:31.793 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:31.793 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:31.793 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:31.799 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:31.799 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:31.800 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Parse{name='S_1', parameters=[], query='SELECT 1'}, Bind{name='B_2', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_2', type=PORTAL}, Execute{name='B_2', rows=1000}, Flush{}]
+2021-10-27 11:51:31.800 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Parse{name='S_1', parameters=[], query='SELECT 1'}, Bind{name='B_3', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_3', type=PORTAL}, Execute{name='B_3', rows=1000}, Flush{}]
+2021-10-27 11:51:31.801 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ParseComplete{}
+2021-10-27 11:51:31.802 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:31.802 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:31.802 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 56, widx: 70, cap: 512))]}
+2021-10-27 11:51:31.804 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ParseComplete{}
+2021-10-27 11:51:31.804 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:31.805 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:31.805 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:31.805 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_2', type=PORTAL}
+2021-10-27 11:51:31.805 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 56, widx: 70, cap: 512))]}
+2021-10-27 11:51:31.806 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:31.806 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:31.806 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_3', type=PORTAL}
+2021-10-27 11:51:31.807 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:31.807 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:31.808 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:31.809 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:31.809 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:31.810 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:31.818 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:31.818 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Parse{name='S_2', parameters=[], query='select pg_sleep(0.2) sleep, 'complete' as status'}, Bind{name='B_4', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_4', type=PORTAL}, Execute{name='B_4', rows=1000}, Flush{}]
+2021-10-27 11:51:32.020 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ParseComplete{}
+2021-10-27 11:51:32.021 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:32.022 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:32.022 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 89, widx: 103, cap: 496)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 89, widx: 103, cap: 496))]}
+2021-10-27 11:51:32.023 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.023 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_4', type=PORTAL}
+2021-10-27 11:51:32.024 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:32.025 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:32.026 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.033 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:32.038  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:32.038  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:32.076  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:32.077 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:32.078 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:32.084 DEBUG 2900079 --- [or-http-epoll-4] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_5', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_5', type=PORTAL}, Execute{name='B_5', rows=1000}, Flush{}]
+2021-10-27 11:51:32.085 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:32.086 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:32.087  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:32.087 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:32.087  INFO 2900079 --- [or-http-epoll-5] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:32.087 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:32.087 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 496))]}
+2021-10-27 11:51:32.088 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:32.088 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.088 DEBUG 2900079 --- [or-http-epoll-5] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_6', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_6', type=PORTAL}, Execute{name='B_6', rows=1000}, Flush{}]
+2021-10-27 11:51:32.089 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_5', type=PORTAL}
+2021-10-27 11:51:32.089 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:32.090 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:32.090 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:32.090 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:32.091 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.091 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 480))]}
+2021-10-27 11:51:32.091 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:32.092 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.092 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_6', type=PORTAL}
+2021-10-27 11:51:32.093 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:32.093 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:32.093 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.094 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:32.094 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_7', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_7', type=PORTAL}, Execute{name='B_7', rows=1000}, Flush{}]
+2021-10-27 11:51:32.296 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:32.296 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:32.297 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 464)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 464))]}
+2021-10-27 11:51:32.298 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.298 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_7', type=PORTAL}
+2021-10-27 11:51:32.299 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:32.300 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:32.301 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.301 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:32.302  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:32.302  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:32.329  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:32.330 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:32.331 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:32.332 DEBUG 2900079 --- [or-http-epoll-6] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_8', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_8', type=PORTAL}, Execute{name='B_8', rows=1000}, Flush{}]
+2021-10-27 11:51:32.333  INFO 2900079 --- [or-http-epoll-7] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:32.333 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:32.333 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:32.334 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:32.334  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:32.334 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:32.334 DEBUG 2900079 --- [or-http-epoll-7] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_9', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_9', type=PORTAL}, Execute{name='B_9', rows=1000}, Flush{}]
+2021-10-27 11:51:32.334 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:32.335 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 480))]}
+2021-10-27 11:51:32.336 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.336 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:32.336 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_8', type=PORTAL}
+2021-10-27 11:51:32.336 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:32.337 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 448))]}
+2021-10-27 11:51:32.337 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.337 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:32.337 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_9', type=PORTAL}
+2021-10-27 11:51:32.338 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:32.338 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:32.338 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:32.338 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.339 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.339 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:32.339 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:32.339 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_10', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_10', type=PORTAL}, Execute{name='B_10', rows=1000}, Flush{}]
+2021-10-27 11:51:32.541 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:32.541 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:32.542 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 432)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 432))]}
+2021-10-27 11:51:32.542 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.543 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_10', type=PORTAL}
+2021-10-27 11:51:32.544 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:32.545 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:32.546 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.546 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:32.546  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:32.547  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:32.571  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:32.571 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:32.571 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:32.572 DEBUG 2900079 --- [or-http-epoll-8] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_11', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_11', type=PORTAL}, Execute{name='B_11', rows=1000}, Flush{}]
+2021-10-27 11:51:32.580  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:32.580 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:32.580 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:32.580 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:32.581 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 464))]}
+2021-10-27 11:51:32.581 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.582 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_11', type=PORTAL}
+2021-10-27 11:51:32.582  INFO 2900079 --- [or-http-epoll-1] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:32.582 DEBUG 2900079 --- [or-http-epoll-1] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:32.582 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:32.583 DEBUG 2900079 --- [or-http-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:32.583 DEBUG 2900079 --- [or-http-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_12', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_12', type=PORTAL}, Execute{name='B_12', rows=1000}, Flush{}]
+2021-10-27 11:51:32.584 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:32.584 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:32.584 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:32.584 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.584 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:32.585 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 416))]}
+2021-10-27 11:51:32.585 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.585 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_12', type=PORTAL}
+2021-10-27 11:51:32.586 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:32.587 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:32.588 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.588 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:32.589 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_13', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_13', type=PORTAL}, Execute{name='B_13', rows=1000}, Flush{}]
+2021-10-27 11:51:32.790 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:32.791 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:32.792 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 400)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 400))]}
+2021-10-27 11:51:32.793 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.793 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_13', type=PORTAL}
+2021-10-27 11:51:32.794 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:32.795 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:32.795 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.796 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:32.796  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:32.796  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:32.814  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:32.814 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:32.815 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:32.815 DEBUG 2900079 --- [or-http-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_14', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_14', type=PORTAL}, Execute{name='B_14', rows=1000}, Flush{}]
+2021-10-27 11:51:32.816 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:32.817 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:32.818 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 448))]}
+2021-10-27 11:51:32.819  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:32.819 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.819 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:32.820 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_14', type=PORTAL}
+2021-10-27 11:51:32.821 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:32.821  INFO 2900079 --- [or-http-epoll-3] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:32.821 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:32.822 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:32.822 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:32.822 DEBUG 2900079 --- [or-http-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_15', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_15', type=PORTAL}, Execute{name='B_15', rows=1000}, Flush{}]
+2021-10-27 11:51:32.822 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.823 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:32.824 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:32.824 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:32.824 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 384))]}
+2021-10-27 11:51:32.825 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:32.825 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_15', type=PORTAL}
+2021-10-27 11:51:32.826 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:32.826 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:32.827 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:32.827 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:32.828 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_16', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_16', type=PORTAL}, Execute{name='B_16', rows=1000}, Flush{}]
+2021-10-27 11:51:33.029 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.030 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:33.030 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 368)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 368))]}
+2021-10-27 11:51:33.031 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.031 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_16', type=PORTAL}
+2021-10-27 11:51:33.032 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.033 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:33.034 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.034 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:33.035  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:33.035  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:33.052  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:33.052 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:33.052 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:33.053 DEBUG 2900079 --- [or-http-epoll-4] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_17', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_17', type=PORTAL}, Execute{name='B_17', rows=1000}, Flush{}]
+2021-10-27 11:51:33.054  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:33.054 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:33.054 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:33.054 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:33.055 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 432))]}
+2021-10-27 11:51:33.055 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.055 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_17', type=PORTAL}
+2021-10-27 11:51:33.056 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:33.057 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:33.057 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.057 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:33.064  INFO 2900079 --- [or-http-epoll-5] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:33.064 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:33.065 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:33.066 DEBUG 2900079 --- [or-http-epoll-5] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_18', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_18', type=PORTAL}, Execute{name='B_18', rows=1000}, Flush{}]
+2021-10-27 11:51:33.067 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.068 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:33.068 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 352))]}
+2021-10-27 11:51:33.069 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.069 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_18', type=PORTAL}
+2021-10-27 11:51:33.070 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.072 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:33.072 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.073 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:33.073 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_19', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_19', type=PORTAL}, Execute{name='B_19', rows=1000}, Flush{}]
+2021-10-27 11:51:33.275 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.276 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:33.276 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 336)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 336))]}
+2021-10-27 11:51:33.277 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.278 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_19', type=PORTAL}
+2021-10-27 11:51:33.278 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.280 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:33.280 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.281 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:33.282  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:33.282  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:33.297  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:33.297 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:33.297 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:33.298 DEBUG 2900079 --- [or-http-epoll-6] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_20', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_20', type=PORTAL}, Execute{name='B_20', rows=1000}, Flush{}]
+2021-10-27 11:51:33.299 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:33.300 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:33.300 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 416))]}
+2021-10-27 11:51:33.301 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.301 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_20', type=PORTAL}
+2021-10-27 11:51:33.301 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:33.302 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:33.302 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.303 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: select pg_sleep(0.2) sleep, 'cancel' as status
+2021-10-27 11:51:33.303 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Parse{name='S_2', parameters=[], query='select pg_sleep(0.2) sleep, 'cancel' as status'}, Bind{name='B_21', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_21', type=PORTAL}, Execute{name='B_21', rows=1000}, Flush{}]
+2021-10-27 11:51:33.307  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:33.307 DEBUG 2900079 --- [or-http-epoll-6] i.r.postgresql.util.FluxDiscardOnCancel  : received cancel signal
+2021-10-27 11:51:33.308  INFO 2900079 --- [or-http-epoll-7] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:33.308 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:33.308 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:33.309 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:33.309 DEBUG 2900079 --- [or-http-epoll-7] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_22', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_22', type=PORTAL}, Execute{name='B_22', rows=1000}, Flush{}]
+2021-10-27 11:51:33.310 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.311 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:33.311 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 320))]}
+2021-10-27 11:51:33.312 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.312 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_22', type=PORTAL}
+2021-10-27 11:51:33.313 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.314 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:33.314 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.315 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:33.315 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_23', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_23', type=PORTAL}, Execute{name='B_23', rows=1000}, Flush{}]
+2021-10-27 11:51:33.505 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ParseComplete{}
+2021-10-27 11:51:33.506 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:33.506 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:33.507 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 400)), PooledSlicedByteBuf(ridx: 0, widx: 6, cap: 6/6, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 400))]}
+2021-10-27 11:51:33.507 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.507 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_21', type=PORTAL}
+2021-10-27 11:51:33.508 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:33.509 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:33.509 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.516 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.517 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:33.517 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 304)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 304))]}
+2021-10-27 11:51:33.518 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.518 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_23', type=PORTAL}
+2021-10-27 11:51:33.519 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.520 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:33.520 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.521 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:33.521  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:33.521  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:33.541  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:33.541 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:33.542 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:33.543 DEBUG 2900079 --- [or-http-epoll-8] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_24', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_24', type=PORTAL}, Execute{name='B_24', rows=1000}, Flush{}]
+2021-10-27 11:51:33.544 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:33.544  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:33.544 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:33.544 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:33.545 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 384))]}
+2021-10-27 11:51:33.545 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.546 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_24', type=PORTAL}
+2021-10-27 11:51:33.546 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:33.547 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:33.548 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.548 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:33.549  INFO 2900079 --- [or-http-epoll-1] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:33.549 DEBUG 2900079 --- [or-http-epoll-1] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:33.550 DEBUG 2900079 --- [or-http-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:33.550 DEBUG 2900079 --- [or-http-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_25', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_25', type=PORTAL}, Execute{name='B_25', rows=1000}, Flush{}]
+2021-10-27 11:51:33.552 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.552 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:33.552 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 288))]}
+2021-10-27 11:51:33.553 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.553 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_25', type=PORTAL}
+2021-10-27 11:51:33.553 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.554 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:33.554 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.555 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:33.555 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_26', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_26', type=PORTAL}, Execute{name='B_26', rows=1000}, Flush{}]
+2021-10-27 11:51:33.756 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.757 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:33.757 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 272)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 272))]}
+2021-10-27 11:51:33.757 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.757 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_26', type=PORTAL}
+2021-10-27 11:51:33.758 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.759 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:33.759 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.759 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:33.759  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:33.759  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:33.779  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:33.780 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:33.780 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:33.781 DEBUG 2900079 --- [or-http-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_27', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_27', type=PORTAL}, Execute{name='B_27', rows=1000}, Flush{}]
+2021-10-27 11:51:33.782  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:33.782 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:33.782 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:33.783 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:33.784 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 368))]}
+2021-10-27 11:51:33.784 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.785 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_27', type=PORTAL}
+2021-10-27 11:51:33.785 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:33.786 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:33.787 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.787  INFO 2900079 --- [or-http-epoll-3] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:33.787 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:33.787 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:33.788 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:33.789 DEBUG 2900079 --- [or-http-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_28', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_28', type=PORTAL}, Execute{name='B_28', rows=1000}, Flush{}]
+2021-10-27 11:51:33.790 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.790 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:33.790 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 256))]}
+2021-10-27 11:51:33.791 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.791 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_28', type=PORTAL}
+2021-10-27 11:51:33.792 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.792 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:33.793 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:33.794 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:33.794 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_29', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_29', type=PORTAL}, Execute{name='B_29', rows=1000}, Flush{}]
+2021-10-27 11:51:33.995 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:33.996 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:33.997 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 240)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 240))]}
+2021-10-27 11:51:33.997 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:33.998 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_29', type=PORTAL}
+2021-10-27 11:51:33.998 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:33.999 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:34.000 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.000 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:34.001  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:34.001  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.020  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:34.021 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.021 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:34.022 DEBUG 2900079 --- [or-http-epoll-4] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_30', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_30', type=PORTAL}, Execute{name='B_30', rows=1000}, Flush{}]
+2021-10-27 11:51:34.023 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:34.023 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.023 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 352))]}
+2021-10-27 11:51:34.023 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.024 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_30', type=PORTAL}
+2021-10-27 11:51:34.024 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:34.025 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:34.025 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.026  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:34.026 DEBUG 2900079 --- [tor-tcp-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: select pg_sleep(0.2) sleep, 'cancel' as status
+2021-10-27 11:51:34.026 DEBUG 2900079 --- [or-http-epoll-4] i.r.postgresql.util.FluxDiscardOnCancel  : received cancel signal
+2021-10-27 11:51:34.026 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Parse{name='S_3', parameters=[], query='select pg_sleep(0.2) sleep, 'cancel' as status'}, Bind{name='B_31', parameterFormats=[], parameters=[], resultFormats=[], source='S_3'}, Describe{name='B_31', type=PORTAL}, Execute{name='B_31', rows=1000}, Flush{}]
+2021-10-27 11:51:34.026 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:34.027  INFO 2900079 --- [or-http-epoll-5] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.027 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.028 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:34.028 DEBUG 2900079 --- [or-http-epoll-5] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_32', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_32', type=PORTAL}, Execute{name='B_32', rows=1000}, Flush{}]
+2021-10-27 11:51:34.029 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:34.030 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.030 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 224))]}
+2021-10-27 11:51:34.030 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.030 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_32', type=PORTAL}
+2021-10-27 11:51:34.031 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:34.031 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:34.031 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.032 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:34.032 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_33', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_33', type=PORTAL}, Execute{name='B_33', rows=1000}, Flush{}]
+2021-10-27 11:51:34.228 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ParseComplete{}
+2021-10-27 11:51:34.228 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:34.228 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:34.229 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 336)), PooledSlicedByteBuf(ridx: 0, widx: 6, cap: 6/6, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 336))]}
+2021-10-27 11:51:34.229 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.229 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_31', type=PORTAL}
+2021-10-27 11:51:34.230 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:34.231 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:34.231 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.233 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:34.234 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:34.234 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 208)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 208))]}
+2021-10-27 11:51:34.234 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.235 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_33', type=PORTAL}
+2021-10-27 11:51:34.235 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:34.236 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:34.237 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.237 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:34.237  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:34.237  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.251  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:34.251 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.252 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.postgresql.QUERY                : [cid: 0x2][pid: 7463] Executing query: SELECT 1
+2021-10-27 11:51:34.252 DEBUG 2900079 --- [or-http-epoll-6] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  [Bind{name='B_34', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_34', type=PORTAL}, Execute{name='B_34', rows=1000}, Flush{}]
+2021-10-27 11:51:34.253 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: BindComplete{}
+2021-10-27 11:51:34.254 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.254 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 320))]}
+2021-10-27 11:51:34.254 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.254 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Close{name='B_34', type=PORTAL}
+2021-10-27 11:51:34.255 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Request:  Sync{}
+2021-10-27 11:51:34.256 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: CloseComplete{}
+2021-10-27 11:51:34.256 DEBUG 2900079 --- [tor-tcp-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x2][pid: 7463] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.256  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:34.256 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:34.262  INFO 2900079 --- [or-http-epoll-7] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.262 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.263 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:34.263 DEBUG 2900079 --- [or-http-epoll-7] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_36', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_36', type=PORTAL}, Execute{name='B_36', rows=1000}, Flush{}]
+2021-10-27 11:51:34.264 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:34.265 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.265 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 192))]}
+2021-10-27 11:51:34.266 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.266 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_36', type=PORTAL}
+2021-10-27 11:51:34.266 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:34.267 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:34.267 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.268 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:34.268 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_37', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_37', type=PORTAL}, Execute{name='B_37', rows=1000}, Flush{}]
+2021-10-27 11:51:34.470 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:34.470 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:34.471 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 176)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 176))]}
+2021-10-27 11:51:34.471 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.471 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_37', type=PORTAL}
+2021-10-27 11:51:34.472 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:34.473 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:34.473 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.473 DEBUG 2900079 --- [tor-tcp-epoll-1] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:34.474  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:34.474  INFO 2900079 --- [tor-tcp-epoll-1] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.488  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:34.488 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.489 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.postgresql.QUERY                : [cid: 0x1][pid: 7464] Executing query: SELECT 1
+2021-10-27 11:51:34.489 DEBUG 2900079 --- [or-http-epoll-8] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  [Bind{name='B_38', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_38', type=PORTAL}, Execute{name='B_38', rows=1000}, Flush{}]
+2021-10-27 11:51:34.490 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: BindComplete{}
+2021-10-27 11:51:34.491 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.491 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 160))]}
+2021-10-27 11:51:34.491 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.492 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Close{name='B_38', type=PORTAL}
+2021-10-27 11:51:34.492 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Request:  Sync{}
+2021-10-27 11:51:34.493 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: CloseComplete{}
+2021-10-27 11:51:34.493 DEBUG 2900079 --- [tor-tcp-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x1][pid: 7464] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.494  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:34.501  INFO 2900079 --- [or-http-epoll-1] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.501 DEBUG 2900079 --- [or-http-epoll-1] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.504 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Request:  StartupMessage{applicationName='sample', database='postgres', username='postgres', options='{lock_timeout=10s, search_path=public}'}
+2021-10-27 11:51:34.515 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: AuthenticationMD5Password{salt=java.nio.HeapByteBuffer[pos=0 lim=4 cap=4]}
+2021-10-27 11:51:34.516 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Request:  PasswordMessage{password='...'}
+2021-10-27 11:51:34.518 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: AuthenticationOk{}
+2021-10-27 11:51:34.519 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='application_name', value='sample'}
+2021-10-27 11:51:34.519 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='client_encoding', value='UTF8'}
+2021-10-27 11:51:34.519 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='DateStyle', value='ISO, MDY'}
+2021-10-27 11:51:34.519 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='integer_datetimes', value='on'}
+2021-10-27 11:51:34.519 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='IntervalStyle', value='postgres'}
+2021-10-27 11:51:34.519 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='is_superuser', value='on'}
+2021-10-27 11:51:34.519 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='server_encoding', value='UTF8'}
+2021-10-27 11:51:34.520 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='server_version', value='13.2 (Debian 13.2-1.pgdg100+1)'}
+2021-10-27 11:51:34.520 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='session_authorization', value='postgres'}
+2021-10-27 11:51:34.520 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='standard_conforming_strings', value='on'}
+2021-10-27 11:51:34.520 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: ParameterStatus{name='TimeZone', value='America/Sao_Paulo'}
+2021-10-27 11:51:34.520 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3] Response: BackendKeyData{processId=7465, secretKey=926066415}
+2021-10-27 11:51:34.520 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.521 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SHOW TRANSACTION ISOLATION LEVEL
+2021-10-27 11:51:34.521 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Query{query='SHOW TRANSACTION ISOLATION LEVEL'}
+2021-10-27 11:51:34.522 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='transaction_isolation', table=0}]}
+2021-10-27 11:51:34.522 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 14, cap: 14/14, unwrapped: PooledUnsafeDirectByteBuf(ridx: 72, widx: 88, cap: 1024))]}
+2021-10-27 11:51:34.522 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SHOW, rowId=null, rows=null}
+2021-10-27 11:51:34.523 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.523 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT oid, typname FROM pg_catalog.pg_type WHERE typname IN ('hstore')
+2021-10-27 11:51:34.523 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Parse{name='S_0', parameters=[], query='SELECT oid, typname FROM pg_catalog.pg_type WHERE typname IN ('hstore')'}, Bind{name='B_40', parameterFormats=[], parameters=[], resultFormats=[], source='S_0'}, Describe{name='B_40', type=PORTAL}, Execute{name='B_40', rows=1000}, Flush{}]
+2021-10-27 11:51:34.525 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ParseComplete{}
+2021-10-27 11:51:34.525 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:34.525 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=1, dataType=26, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='oid', table=1247}, Field{column=2, dataType=19, dataTypeModifier=-1, dataTypeSize=64, format=FORMAT_TEXT, name='typname', table=1247}]}
+2021-10-27 11:51:34.525 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=0}
+2021-10-27 11:51:34.526 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_40', type=PORTAL}
+2021-10-27 11:51:34.526 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:34.526 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:34.527 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.527 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:34.527 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Parse{name='S_1', parameters=[], query='SELECT 1'}, Bind{name='B_41', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_41', type=PORTAL}, Execute{name='B_41', rows=1000}, Flush{}]
+2021-10-27 11:51:34.528 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ParseComplete{}
+2021-10-27 11:51:34.528 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:34.528 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.528 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 56, widx: 70, cap: 512))]}
+2021-10-27 11:51:34.529 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.529 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_41', type=PORTAL}
+2021-10-27 11:51:34.529 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:34.529 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:34.529 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.530 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:34.531 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Parse{name='S_2', parameters=[], query='select pg_sleep(0.2) sleep, 'complete' as status'}, Bind{name='B_42', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_42', type=PORTAL}, Execute{name='B_42', rows=1000}, Flush{}]
+2021-10-27 11:51:34.733 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ParseComplete{}
+2021-10-27 11:51:34.733 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:34.733 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:34.734 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 89, widx: 103, cap: 496)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 89, widx: 103, cap: 496))]}
+2021-10-27 11:51:34.734 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.734 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_42', type=PORTAL}
+2021-10-27 11:51:34.734 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:34.735 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:34.736 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.736 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:34.736  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:34.736  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.755  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:34.755 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.756 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:34.756 DEBUG 2900079 --- [or-http-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_43', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_43', type=PORTAL}, Execute{name='B_43', rows=1000}, Flush{}]
+2021-10-27 11:51:34.757  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:34.757 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:34.757 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:34.758 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.758 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 480))]}
+2021-10-27 11:51:34.758 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.759 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_43', type=PORTAL}
+2021-10-27 11:51:34.759 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:34.760 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:34.760 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.760 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:34.761  INFO 2900079 --- [or-http-epoll-3] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.762 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.763 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:34.763 DEBUG 2900079 --- [or-http-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_44', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_44', type=PORTAL}, Execute{name='B_44', rows=1000}, Flush{}]
+2021-10-27 11:51:34.764 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:34.764 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.765 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 464))]}
+2021-10-27 11:51:34.765 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.765 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_44', type=PORTAL}
+2021-10-27 11:51:34.766 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:34.767 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:34.767 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.768 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:34.768 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_45', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_45', type=PORTAL}, Execute{name='B_45', rows=1000}, Flush{}]
+2021-10-27 11:51:34.969 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:34.970 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:34.970 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 448)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 448))]}
+2021-10-27 11:51:34.970 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.971 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_45', type=PORTAL}
+2021-10-27 11:51:34.971 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:34.972 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:34.972 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.972 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:34.973  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:34.973  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.991  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:34.991 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.992 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:34.992 DEBUG 2900079 --- [or-http-epoll-4] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_46', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_46', type=PORTAL}, Execute{name='B_46', rows=1000}, Flush{}]
+2021-10-27 11:51:34.993 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:34.993 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.993 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 432))]}
+2021-10-27 11:51:34.994 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:34.994 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_46', type=PORTAL}
+2021-10-27 11:51:34.994 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:34.995 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:34.995  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:34.995 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:34.995 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:34.995 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:34.997  INFO 2900079 --- [or-http-epoll-5] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:34.997 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:34.998 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:34.998 DEBUG 2900079 --- [or-http-epoll-5] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_47', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_47', type=PORTAL}, Execute{name='B_47', rows=1000}, Flush{}]
+2021-10-27 11:51:34.999 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:34.999 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:34.999 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 416))]}
+2021-10-27 11:51:35.000 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.000 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_47', type=PORTAL}
+2021-10-27 11:51:35.000 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.001 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.001 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.002 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:35.002 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_48', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_48', type=PORTAL}, Execute{name='B_48', rows=1000}, Flush{}]
+2021-10-27 11:51:35.204 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.204 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:35.204 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 400)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 400))]}
+2021-10-27 11:51:35.204 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.204 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_48', type=PORTAL}
+2021-10-27 11:51:35.205 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.206 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.206 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.206 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:35.206  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:35.206  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:35.227  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:35.227 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:35.228 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:35.228 DEBUG 2900079 --- [or-http-epoll-6] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_49', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_49', type=PORTAL}, Execute{name='B_49', rows=1000}, Flush{}]
+2021-10-27 11:51:35.229 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.230 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:35.230 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 384))]}
+2021-10-27 11:51:35.231 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.231 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_49', type=PORTAL}
+2021-10-27 11:51:35.231 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.232 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.232 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.233  INFO 2900079 --- [or-http-epoll-7] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:35.233 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'cancel' as status
+2021-10-27 11:51:35.233 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:35.233 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Parse{name='S_3', parameters=[], query='select pg_sleep(0.2) sleep, 'cancel' as status'}, Bind{name='B_50', parameterFormats=[], parameters=[], resultFormats=[], source='S_3'}, Describe{name='B_50', type=PORTAL}, Execute{name='B_50', rows=1000}, Flush{}]
+2021-10-27 11:51:35.233  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:35.234 DEBUG 2900079 --- [or-http-epoll-6] i.r.postgresql.util.FluxDiscardOnCancel  : received cancel signal
+2021-10-27 11:51:35.234 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:35.235 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:35.435 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ParseComplete{}
+2021-10-27 11:51:35.435 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.435 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:35.436 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 368)), PooledSlicedByteBuf(ridx: 0, widx: 6, cap: 6/6, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 368))]}
+2021-10-27 11:51:35.436 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.436 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_50', type=PORTAL}
+2021-10-27 11:51:35.437 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.437 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_51', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_51', type=PORTAL}, Execute{name='B_51', rows=1000}, Flush{}]
+2021-10-27 11:51:35.438 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.439 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.439 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.439 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:35.439 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 62, widx: 76, cap: 352))]}
+2021-10-27 11:51:35.440 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.440 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_51', type=PORTAL}
+2021-10-27 11:51:35.441 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.442 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.442 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.443 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:35.443 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_52', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_52', type=PORTAL}, Execute{name='B_52', rows=1000}, Flush{}]
+2021-10-27 11:51:35.645 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.645 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:35.646 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 336)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 336))]}
+2021-10-27 11:51:35.646 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.646 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_52', type=PORTAL}
+2021-10-27 11:51:35.647 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.648 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.648 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.648 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:35.648  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:35.648  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:35.668  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:35.669 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:35.669 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:35.670 DEBUG 2900079 --- [or-http-epoll-8] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_53', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_53', type=PORTAL}, Execute{name='B_53', rows=1000}, Flush{}]
+2021-10-27 11:51:35.672 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.672 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:35.673 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 320))]}
+2021-10-27 11:51:35.674 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.674 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_53', type=PORTAL}
+2021-10-27 11:51:35.674  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:35.675 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:35.675 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.676  INFO 2900079 --- [or-http-epoll-1] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:35.676 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.676 DEBUG 2900079 --- [or-http-epoll-1] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:35.676 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.676 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:35.677 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:35.677 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_54', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_54', type=PORTAL}, Execute{name='B_54', rows=1000}, Flush{}]
+2021-10-27 11:51:35.678 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.679 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:35.679 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 304))]}
+2021-10-27 11:51:35.680 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.680 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_54', type=PORTAL}
+2021-10-27 11:51:35.680 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.681 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.682 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.682 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:35.682 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_55', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_55', type=PORTAL}, Execute{name='B_55', rows=1000}, Flush{}]
+2021-10-27 11:51:35.884 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.884 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:35.884 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 288)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 288))]}
+2021-10-27 11:51:35.885 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.885 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_55', type=PORTAL}
+2021-10-27 11:51:35.885 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.886 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.886 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.887 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:35.887  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:35.887  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:35.909  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:35.909 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:35.910 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:35.910 DEBUG 2900079 --- [or-http-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_56', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_56', type=PORTAL}, Execute{name='B_56', rows=1000}, Flush{}]
+2021-10-27 11:51:35.911  INFO 2900079 --- [or-http-epoll-3] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:35.912 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:35.912  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:35.912 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.912 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:35.912 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:35.912 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 272))]}
+2021-10-27 11:51:35.913 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.913 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_56', type=PORTAL}
+2021-10-27 11:51:35.914 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.914 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.915 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.915 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:35.915 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:35.916 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_57', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_57', type=PORTAL}, Execute{name='B_57', rows=1000}, Flush{}]
+2021-10-27 11:51:35.916 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:35.917 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:35.917 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 256))]}
+2021-10-27 11:51:35.917 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:35.917 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_57', type=PORTAL}
+2021-10-27 11:51:35.918 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:35.918 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:35.919 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:35.919 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:35.919 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_58', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_58', type=PORTAL}, Execute{name='B_58', rows=1000}, Flush{}]
+2021-10-27 11:51:36.120 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.121 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:36.121 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 240)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 240))]}
+2021-10-27 11:51:36.121 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.122 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_58', type=PORTAL}
+2021-10-27 11:51:36.122 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.123 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.123 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.124 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:36.124  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:36.124  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:36.140  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:36.140 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:36.141 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:36.141 DEBUG 2900079 --- [or-http-epoll-4] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_59', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_59', type=PORTAL}, Execute{name='B_59', rows=1000}, Flush{}]
+2021-10-27 11:51:36.143 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.143  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:36.143 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:36.143 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:36.143 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 224))]}
+2021-10-27 11:51:36.143 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.143 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_59', type=PORTAL}
+2021-10-27 11:51:36.144 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.144  INFO 2900079 --- [or-http-epoll-5] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:36.144 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:36.144 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.144 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.144 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:36.145 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:36.145 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_60', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_60', type=PORTAL}, Execute{name='B_60', rows=1000}, Flush{}]
+2021-10-27 11:51:36.146 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.146 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:36.146 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 208))]}
+2021-10-27 11:51:36.146 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.146 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_60', type=PORTAL}
+2021-10-27 11:51:36.146 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.147 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.147 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.147 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:36.147 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_61', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_61', type=PORTAL}, Execute{name='B_61', rows=1000}, Flush{}]
+2021-10-27 11:51:36.349 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.349 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:36.349 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 192)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 192))]}
+2021-10-27 11:51:36.350 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.350 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_61', type=PORTAL}
+2021-10-27 11:51:36.350 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.351 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.351 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.351 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:36.352  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:36.352  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:36.369  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:36.370 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:36.370 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:36.370 DEBUG 2900079 --- [or-http-epoll-6] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_62', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_62', type=PORTAL}, Execute{name='B_62', rows=1000}, Flush{}]
+2021-10-27 11:51:36.371 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.372 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:36.372 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 176))]}
+2021-10-27 11:51:36.372 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.372 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_62', type=PORTAL}
+2021-10-27 11:51:36.373 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.374 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.374 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.375 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'cancel' as status
+2021-10-27 11:51:36.375 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Parse{name='S_4', parameters=[], query='select pg_sleep(0.2) sleep, 'cancel' as status'}, Bind{name='B_63', parameterFormats=[], parameters=[], resultFormats=[], source='S_4'}, Describe{name='B_63', type=PORTAL}, Execute{name='B_63', rows=1000}, Flush{}]
+2021-10-27 11:51:36.376  INFO 2900079 --- [or-http-epoll-6] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:36.376 DEBUG 2900079 --- [or-http-epoll-6] i.r.postgresql.util.FluxDiscardOnCancel  : received cancel signal
+2021-10-27 11:51:36.376 DEBUG 2900079 --- [or-http-epoll-6] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:36.377  INFO 2900079 --- [or-http-epoll-7] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:36.377 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:36.378 DEBUG 2900079 --- [or-http-epoll-7] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:36.577 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ParseComplete{}
+2021-10-27 11:51:36.577 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.577 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:36.578 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 160)), PooledSlicedByteBuf(ridx: 0, widx: 6, cap: 6/6, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 160))]}
+2021-10-27 11:51:36.578 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.578 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_63', type=PORTAL}
+2021-10-27 11:51:36.578 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.579 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_64', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_64', type=PORTAL}, Execute{name='B_64', rows=1000}, Flush{}]
+2021-10-27 11:51:36.580 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.580 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.580 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.580 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:36.580 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 62, widx: 76, cap: 160))]}
+2021-10-27 11:51:36.580 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.581 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_64', type=PORTAL}
+2021-10-27 11:51:36.581 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.582 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.582 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.582 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:36.583 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_65', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_65', type=PORTAL}, Execute{name='B_65', rows=1000}, Flush{}]
+2021-10-27 11:51:36.784 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.784 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:36.785 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 144)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 144))]}
+2021-10-27 11:51:36.785 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.785 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_65', type=PORTAL}
+2021-10-27 11:51:36.785 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.786 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.786 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.786 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:36.787  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:36.787  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:36.804  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:36.805 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:36.805 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:36.805 DEBUG 2900079 --- [or-http-epoll-8] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_66', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_66', type=PORTAL}, Execute{name='B_66', rows=1000}, Flush{}]
+2021-10-27 11:51:36.806 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.806  INFO 2900079 --- [or-http-epoll-8] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:36.806 DEBUG 2900079 --- [or-http-epoll-8] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:36.806 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:36.807 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 128))]}
+2021-10-27 11:51:36.807 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.807 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_66', type=PORTAL}
+2021-10-27 11:51:36.807 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.808 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.808 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.808 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.ConnectionPool             : Releasing connection after cancellation
+2021-10-27 11:51:36.808  INFO 2900079 --- [or-http-epoll-1] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:36.809 DEBUG 2900079 --- [or-http-epoll-1] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:36.809 DEBUG 2900079 --- [or-http-epoll-1] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:36.809 DEBUG 2900079 --- [or-http-epoll-1] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_67', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_67', type=PORTAL}, Execute{name='B_67', rows=1000}, Flush{}]
+2021-10-27 11:51:36.810 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:36.810 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:36.810 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 112))]}
+2021-10-27 11:51:36.811 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:36.811 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_67', type=PORTAL}
+2021-10-27 11:51:36.811 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:36.812 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:36.812 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:36.812 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:36.812 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_68', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_68', type=PORTAL}, Execute{name='B_68', rows=1000}, Flush{}]
+2021-10-27 11:51:37.014 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:37.014 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:37.014 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 96, cap: 96)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 96, cap: 96))]}
+2021-10-27 11:51:37.015 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:37.015 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_68', type=PORTAL}
+2021-10-27 11:51:37.016 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:37.016 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:37.017 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:37.017 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:37.017  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:37.017  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:37.031  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:37.031 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:37.031 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:37.031 DEBUG 2900079 --- [or-http-epoll-2] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_69', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_69', type=PORTAL}, Execute{name='B_69', rows=1000}, Flush{}]
+2021-10-27 11:51:37.032 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:37.032 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:37.033 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 144))]}
+2021-10-27 11:51:37.033 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:37.033 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_69', type=PORTAL}
+2021-10-27 11:51:37.033 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:37.034 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:37.034 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:37.034 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'cancel' as status
+2021-10-27 11:51:37.034 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Parse{name='S_5', parameters=[], query='select pg_sleep(0.2) sleep, 'cancel' as status'}, Bind{name='B_70', parameterFormats=[], parameters=[], resultFormats=[], source='S_5'}, Describe{name='B_70', type=PORTAL}, Execute{name='B_70', rows=1000}, Flush{}]
+2021-10-27 11:51:37.041  INFO 2900079 --- [or-http-epoll-3] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:37.041 DEBUG 2900079 --- [or-http-epoll-3] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:37.043  INFO 2900079 --- [or-http-epoll-2] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:37.043 DEBUG 2900079 --- [or-http-epoll-2] i.r.postgresql.util.FluxDiscardOnCancel  : received cancel signal
+2021-10-27 11:51:37.043 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:37.044 DEBUG 2900079 --- [or-http-epoll-2] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:37.236 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ParseComplete{}
+2021-10-27 11:51:37.236 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:37.236 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:37.236 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 128)), PooledSlicedByteBuf(ridx: 0, widx: 6, cap: 6/6, unwrapped: PooledUnsafeDirectByteBuf(ridx: 87, widx: 101, cap: 128))]}
+2021-10-27 11:51:37.237 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:37.237 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_70', type=PORTAL}
+2021-10-27 11:51:37.238 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:37.238 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_71', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_71', type=PORTAL}, Execute{name='B_71', rows=1000}, Flush{}]
+2021-10-27 11:51:37.239 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:37.240 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:37.240 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:37.240 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:37.240 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 62, widx: 76, cap: 128))]}
+2021-10-27 11:51:37.241 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:37.241 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_71', type=PORTAL}
+2021-10-27 11:51:37.242 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:37.243 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:37.243 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:37.244 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: select pg_sleep(0.2) sleep, 'complete' as status
+2021-10-27 11:51:37.244 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_72', parameterFormats=[], parameters=[], resultFormats=[], source='S_2'}, Describe{name='B_72', type=PORTAL}, Execute{name='B_72', rows=1000}, Flush{}]
+2021-10-27 11:51:37.446 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:37.446 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=2278, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='sleep', table=0}, Field{column=0, dataType=25, dataTypeModifier=-1, dataTypeSize=-1, format=FORMAT_TEXT, name='status', table=0}]}
+2021-10-27 11:51:37.446 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 112)), PooledSlicedByteBuf(ridx: 0, widx: 8, cap: 8/8, unwrapped: PooledUnsafeDirectByteBuf(ridx: 84, widx: 98, cap: 112))]}
+2021-10-27 11:51:37.447 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:37.447 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_72', type=PORTAL}
+2021-10-27 11:51:37.447 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:37.448 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:37.448 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:37.449 DEBUG 2900079 --- [tor-tcp-epoll-3] io.r2dbc.pool.PooledConnection           : Releasing connection
+2021-10-27 11:51:37.449  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.CustomRepository     : onNext complete
+2021-10-27 11:51:37.449  INFO 2900079 --- [tor-tcp-epoll-3] c.e.connectionstuck.SampleController     : Exit: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:37.467  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=cancel
+2021-10-27 11:51:37.467 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+2021-10-27 11:51:37.468 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.postgresql.QUERY                : [cid: 0x3][pid: 7465] Executing query: SELECT 1
+2021-10-27 11:51:37.468 DEBUG 2900079 --- [or-http-epoll-4] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  [Bind{name='B_73', parameterFormats=[], parameters=[], resultFormats=[], source='S_1'}, Describe{name='B_73', type=PORTAL}, Execute{name='B_73', rows=1000}, Flush{}]
+2021-10-27 11:51:37.469 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: BindComplete{}
+2021-10-27 11:51:37.469 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: RowDescription{fields=[Field{column=0, dataType=23, dataTypeModifier=-1, dataTypeSize=4, format=FORMAT_TEXT, name='?column?', table=0}]}
+2021-10-27 11:51:37.469 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: DataRow{columns=[PooledSlicedByteBuf(ridx: 0, widx: 1, cap: 1/1, unwrapped: PooledUnsafeDirectByteBuf(ridx: 51, widx: 65, cap: 96))]}
+2021-10-27 11:51:37.470 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CommandComplete{command=SELECT, rowId=null, rows=1}
+2021-10-27 11:51:37.470 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Close{name='B_73', type=PORTAL}
+2021-10-27 11:51:37.471 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Request:  Sync{}
+2021-10-27 11:51:37.472 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: CloseComplete{}
+2021-10-27 11:51:37.472 DEBUG 2900079 --- [tor-tcp-epoll-3] i.r.p.client.ReactorNettyClient          : [cid: 0x3][pid: 7465] Response: ReadyForQuery{transactionStatus=IDLE}
+2021-10-27 11:51:37.472  INFO 2900079 --- [or-http-epoll-4] c.e.connectionstuck.CustomRepository     : CANCEL findAllCustom
+2021-10-27 11:51:37.472 DEBUG 2900079 --- [or-http-epoll-4] io.r2dbc.pool.MonoDiscardOnCancel        : received cancel signal
+2021-10-27 11:51:37.474  INFO 2900079 --- [or-http-epoll-5] c.e.connectionstuck.SampleController     : Entering: [GET] http://localhost:8080/v1/sample?status=complete
+2021-10-27 11:51:37.474 DEBUG 2900079 --- [or-http-epoll-5] io.r2dbc.pool.ConnectionPool             : Obtaining new connection from the pool
+
+
