@@ -15,28 +15,10 @@ public class SampleController {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(SampleController.class);
 
-  private final CustomRepository repository;
   private final NativeRepository nativeRepository;
 
-  public SampleController(CustomRepository repository,
-                          NativeRepository nativeRepository) {
-    this.repository = repository;
+  public SampleController(NativeRepository nativeRepository) {
     this.nativeRepository = nativeRepository;
-  }
-
-  @GetMapping
-  public Mono<String> sample(@RequestParam("status") String status,
-                             ServerWebExchange exchange) {
-
-    return repository
-            .findCustom(status)
-            .doOnSubscribe(s -> LOGGER.info("Entering: [{}] {}",
-                    exchange.getRequest().getMethod(),
-                    exchange.getRequest().getURI()))
-            .doOnTerminate(() -> LOGGER.info("Exit: [{}] {}",
-                    exchange.getRequest().getMethod(),
-                    exchange.getRequest().getURI()));
-
   }
 
   @GetMapping("/native")
