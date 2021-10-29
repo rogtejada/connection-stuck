@@ -51,6 +51,7 @@ public class PostgresR2dbcConnectionPoolFactory {
                 .tcpNoDelay(true)
                 .options(options)
                 .applicationName(applicationName)
+                .autodetectExtensions(false)
                 .build());
 
     return new ConnectionPool(
